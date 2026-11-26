@@ -4,25 +4,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Koneksi baca DB tenant
-    |--------------------------------------------------------------------------
-    |
-    | Sidulur publik membaca langsung DB tenant. Kredensial dibaca dari env
-    | bale-front dan TIDAK boleh memakai koneksi tulis admin.
-    |
-    */
-
-    'connection' => [
-        'name' => env('SIDULUR_DB_CONNECTION', 'sidulur'),
-        'host' => env('SIDULUR_DB_HOST', '127.0.0.1'),
-        'port' => env('SIDULUR_DB_PORT', '3306'),
-        'database' => env('SIDULUR_DB_DATABASE'),
-        'username' => env('SIDULUR_DB_USERNAME'),
-        'password' => env('SIDULUR_DB_PASSWORD'),
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
     | Blind index
     |--------------------------------------------------------------------------
     |

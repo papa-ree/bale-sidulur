@@ -2,7 +2,6 @@
 
 namespace Bale\BaleSidulur;
 
-use Bale\BaleSidulur\Services\SidulurConnection;
 use Bale\Umpak\Concerns\HasLandingPageGuard;
 use Bale\Umpak\Concerns\HasLivewireComponents;
 use Bale\Umpak\Umpak;
@@ -15,8 +14,6 @@ class BaleSidulurServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->mergeConfigFrom(__DIR__.'/../config/sidulur.php', 'sidulur');
-
-        SidulurConnection::register();
 
         $this->app->resolving(Umpak::class, function (Umpak $umpak) {
             $umpak->registerLandingPage('sidulur', 'Sidulur');

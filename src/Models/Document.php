@@ -2,10 +2,14 @@
 
 namespace Bale\BaleSidulur\Models;
 
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
-class Document extends SidulurModel
+class Document extends Model
 {
+    use HasUuids;
+
     public const PUBLIC_KINDS = ['hasil', 'surat'];
 
     protected $table = 'sidulur_documents';

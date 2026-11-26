@@ -2,9 +2,10 @@
 
 namespace Bale\BaleSidulur\Models;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
 
-class Setting extends SidulurModel
+class Setting extends Model
 {
     protected $table = 'sidulur_settings';
 

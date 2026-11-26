@@ -2,12 +2,16 @@
 
 namespace Bale\BaleSidulur\Models;
 
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class Service extends SidulurModel
+class Service extends Model
 {
+    use HasUuids;
+
     protected $table = 'sidulur_services';
 
     protected $casts = [

@@ -2,10 +2,14 @@
 
 namespace Bale\BaleSidulur\Models;
 
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class PelayananBidang extends SidulurModel
+class PelayananBidang extends Model
 {
+    use HasUuids;
+
     protected $table = 'sidulur_pelayanan_bidangs';
 
     protected $casts = [

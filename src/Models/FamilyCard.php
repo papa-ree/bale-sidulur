@@ -2,11 +2,15 @@
 
 namespace Bale\BaleSidulur\Models;
 
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
-class FamilyCard extends SidulurModel
+class FamilyCard extends Model
 {
+    use HasUuids;
+
     protected $table = 'sidulur_family_cards';
 
     protected $hidden = ['nomor_kk'];

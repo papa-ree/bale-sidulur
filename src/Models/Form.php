@@ -2,10 +2,14 @@
 
 namespace Bale\BaleSidulur\Models;
 
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Form extends SidulurModel
+class Form extends Model
 {
+    use HasUuids;
+
     protected $table = 'sidulur_forms';
 
     protected $casts = [

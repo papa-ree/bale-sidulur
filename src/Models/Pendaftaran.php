@@ -2,13 +2,17 @@
 
 namespace Bale\BaleSidulur\Models;
 
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
-class Pendaftaran extends SidulurModel
+class Pendaftaran extends Model
 {
+    use HasUuids;
+
     protected $table = 'sidulur_pendaftarans';
 
     protected $casts = [
