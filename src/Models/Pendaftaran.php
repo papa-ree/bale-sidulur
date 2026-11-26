@@ -43,9 +43,14 @@ class Pendaftaran extends Model
     }
 
     // Dokumen ditulis aplikasi admin dengan kelas model admin, bukan kelas di sini.
+    public function getMorphClass(): string
+    {
+        return 'Bale\Sidulur\Models\Pendaftaran';
+    }
+
     public function documents(): MorphMany
     {
-        return $this->morphMany(Document::class, 'documentable', 'Bale\Sidulur\Models\Pendaftaran');
+        return $this->morphMany(Document::class, 'documentable');
     }
 
     public function isExpired(): bool
