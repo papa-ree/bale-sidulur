@@ -71,15 +71,17 @@ class CheckTicket extends Component
             ])->all(),
         ];
 
-        $this->documents = $pendaftaran->documents
-            ->filter(fn ($document) => $document->isPublic())
-            ->map(fn ($document) => [
-                'name' => strtoupper($document->kind).' — '.($document->original_name ?: 'Dokumen'),
-                'url' => $links->for($document),
-            ])
-            ->filter(fn ($document) => filled($document['url']))
-            ->values()
-            ->all();
+        $this->documents = $pendaftaran->pelayananBidang?->status !== 'selesai'
+            ? []
+            : $pendaftaran->documents
+                ->filter(fn ($document) => $document->isPublic())
+                ->map(fn ($document) => [
+                    'name' => strtoupper($document->kind).' — '.($document->original_name ?: 'Dokumen'),
+                    'url' => $links->for($document),
+                ])
+                ->filter(fn ($document) => filled($document['url']))
+                ->values()
+                ->all();
     }
 
     public function resetResult(): void

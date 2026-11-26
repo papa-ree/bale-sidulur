@@ -14,7 +14,7 @@ class TicketTracker
     public function find(string $ticket, string $nik): ?Pendaftaran
     {
         $pendaftaran = Pendaftaran::query()
-            ->with(['citizen', 'service.bidang', 'pelayananBidang', 'timelines'])
+            ->with(['citizen', 'service.bidang', 'pelayananBidang', 'timelines', 'documents'])
             ->where('ticket_number', strtoupper(trim($ticket)))
             ->first();
 

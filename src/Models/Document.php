@@ -10,7 +10,7 @@ class Document extends Model
 {
     use HasUuids;
 
-    public const PUBLIC_KINDS = ['hasil', 'surat'];
+    public const PUBLIC_KINDS = ['hasil', 'surat', 'respon'];
 
     protected $table = 'sidulur_documents';
 

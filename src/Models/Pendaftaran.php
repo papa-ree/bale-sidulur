@@ -42,9 +42,10 @@ class Pendaftaran extends Model
         return $this->hasMany(Timeline::class)->orderBy('created_at');
     }
 
+    // Dokumen ditulis aplikasi admin dengan kelas model admin, bukan kelas di sini.
     public function documents(): MorphMany
     {
-        return $this->morphMany(Document::class, 'documentable');
+        return $this->morphMany(Document::class, 'documentable', 'Bale\Sidulur\Models\Pendaftaran');
     }
 
     public function isExpired(): bool
